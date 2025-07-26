@@ -1,8 +1,13 @@
-![A photo of me](photo.jpg)
 
-This is my personal webpage. I am currently a master student at the University of Padova, studying Computer Engineering, more specifically _High Performance Computing and Big Data_.
-I will be studying for a semester at ETH Zürich starting in September 2025.
+Visit my website at [ggaio.it](ggaio.it)
 
+[comment]: <>(
+TOOD:
+## Getting in Touch
+)
 
+## Credits
+
+Even though it is not clearly marked as such, this website is forked from [https://github.com/jglovier/resume-template](https://github.com/jglovier/resume-template).
 
 
