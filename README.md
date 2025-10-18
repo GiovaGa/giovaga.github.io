@@ -1,10 +1,7 @@
 
-Visit my website at [ggaio.it](ggaio.it)
+Visit my website at [ggaio.it](https://ggaio.it)
 
-[comment]: <>(
-TOOD:
-## Getting in Touch
-)
+[comment]:  <> (TODO Getting in Touch)
 
 ## Credits
 
