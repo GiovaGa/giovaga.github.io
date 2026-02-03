@@ -1,0 +1,10 @@
+
+
+- iso690: "GAIO, Giovanni, et al. SEUPD2425-RACOON at LongEval: A Novel Approach To Information Retrieval With LLM-Based Query Expansion And Temporal Relevance Feedback Techniques. In: CEUR WORKSHOP PROCEEDINGS. CEUR-WS, 2025. S. 3454-3474."
+  url: "https://ceur-ws.org/Vol-4038/paper_273.pdf"
+  descr: "As part of the course 'Search Engines' by prof. Nicola Ferro, me and some colleagues worked on an information retrieval system, that we were able to publish."
+
+- iso690: "GAIO, Giovanni. Algoritmi di approssimazione per la massimizzazione di funzioni submodulari. 2024."
+  url: "https://thesis.unipd.it/retrieve/8e99c414-c3aa-4472-b092-fe187226892c/tesi.pdf"
+  descr: "This is by bachelor's thesis. It is a report about results about the problem of maximizing submodular functions."
+

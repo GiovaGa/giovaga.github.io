@@ -28,7 +28,6 @@ resume_header_intro: "<p>I am a master's student in Computer Engineering, nearin
 <p>I am currently a <b>part-time student intern at Huawei Research Center</b>, developing high-performance optimization algorithms. These are powered by and integrated with an implementation of <a href=https://github.com/Algebraic-Programming/ALP>GraphBLAS</a>, a sparse linear algebra library. </p>
 
 <p>My passion is in the study of <b>algorithms, parallel computing</b> and everything that enables <b>fast, efficient</b> and in general <b>high-performance computations</b>.</p>
-
 "
 
 # use "yes" to display the email contact button,
@@ -39,6 +38,7 @@ resume_looking_for_work:        "yes"
 
 # Decide which sections to use
 # comment out to hide
+resume_section_publications:    true
 resume_section_experience:      false
 resume_section_education:       false
 resume_section_projects:        false

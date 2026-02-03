@@ -40,6 +40,7 @@
         </div>
 
         {% if site.resume_looking_for_work == 'yes' %}
+        <hr/>
         <p>I am currently looking around for a PhD opportunity in the fields of parallel computing, high performance computing, algorithms and related fields.
 
         Feel free to contact me if you happen to look for someone like me!</p>
@@ -176,6 +177,29 @@
 
       </section>
       <!-- end Associations -->
+      {% endif %}
+
+      {% if site.resume_section_publications %}
+      <!-- begin Publications -->
+      <section class="content-section">
+
+        <header class="section-header">
+          <h2>Publications</h2>
+        </header>
+        <p>
+        I have also published also some works, that you can check out online.
+        </p>
+
+        <div class="resume-item">
+          <ul class="resume-item-list">
+            {% for publication in site.data.publications %}
+            <li><a href="{{ publication.url }}">{{ publication.iso690 }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+
+      </section>
+      <!-- end Publications -->
       {% endif %}
 
       {% if site.resume_section_interests %}
