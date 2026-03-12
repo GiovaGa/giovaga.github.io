@@ -193,7 +193,11 @@
         <div class="resume-item">
           <ul class="resume-item-list">
             {% for publication in site.data.publications %}
-            <li><a href="{{ publication.url }}">{{ publication.iso690 }}</a></li>
+            <li>
+                <a href="{{ publication.url }}">{{ publication.iso690 }}</a>
+
+                <p>{{ publication.descr }}</p>
+            </li>
             {% endfor %}
           </ul>
         </div>
