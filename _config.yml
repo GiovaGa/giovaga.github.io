@@ -14,7 +14,7 @@ resume_name:                    "Giovanni Gaio"
 resume_title:                   ""
 
 # used for the contact button in _layouts/resume.html
-resume_contact_email:           "ggaio-it@pm.me"
+resume_contact_email:           "phd@ggaio.it"
 
 # the next two items are used for schema itemprops in _layouts/resume.html
 # resume_contact_telephone:       "555-7334"
@@ -25,7 +25,7 @@ display_header_contact_info:    "true"
 
 resume_header_intro: "<p>I am a master's student in Computer Engineering at the <b>University of Padova</b>, nearing the end of my studies.
 After a semester of courses at ETH,
-I am working on my master's thesis at <b>Huawei Zurich Research Center</b>, developing high-performance optimization algorithms under the supervision of Denis Jelovina.</p>
+I am now working on my master's thesis at <b>Huawei Zurich Research Center</b>, developing high-performance optimization algorithms under the supervision of Denis Jelovina.</p>
 
 <p>My passion is in the study of <b>algorithms, parallel computing</b> and everything that enables <b>fast, efficient</b> or otherwise <b>high-performance computations</b>.</p>
 "
