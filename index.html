@@ -2,6 +2,7 @@
 <html lang="en">
 
   <head>
+  {% include theme-init.html %}
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -113,17 +114,7 @@
 
 </ul>
 
-          <!-- Theme toggle button (JS will manage state and persistence) -->
-          <button id="theme-toggle" class="theme-toggle no-print" aria-pressed="false" aria-label="Toggle dark mode">
-            <!-- Moon (shown in light mode) -->
-            <svg class="icon icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
-              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
-            </svg>
-            <!-- Sun (shown in dark mode) -->
-            <svg class="icon icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
-              <path d="M6.76 4.84l-1.8-1.79L3.17 4.84l1.79 1.79 1.8-1.79zM1 13h3v-2H1v2zm10 9h2v-3h-2v3zm7.04-2.46l1.79 1.79 1.79-1.79-1.79-1.79-1.79 1.79zM20 11v2h3v-2h-3zM6.76 19.16l-1.8 1.79L3.17 19.16l1.79-1.79 1.8 1.79zM11 1h2v3h-2V1zm4.24 4.84l1.8-1.79L18.83 4.84l-1.79 1.79-1.8-1.79zM12 6a6 6 0 100 12A6 6 0 0012 6z"/>
-            </svg>
-          </button>
+          {% include theme-toggle.html %}
 
 
         </div>
@@ -247,33 +238,7 @@
     });
   })();
   </script>
-
-  <script>
-  // Load quotes from quotes.json and render into the #quote-list element
-  (function(){
-    const container = document.getElementById('quote-list');
-    if(!container) return;
-    fetch('quotes.json')
-      .then(res => { if(!res.ok) throw new Error('Failed to load'); return res.json(); })
-      .then(data => {
-        // Replace contents with the loaded quotes
-        container.innerHTML = '';
-        data.forEach(q => {
-          const li = document.createElement('li');
-          const block = document.createElement('blockquote');
-          const p = document.createElement('p'); p.textContent = q.text;
-          const footer = document.createElement('footer'); footer.textContent = '— ' + (q.author || '');
-          block.appendChild(p);
-          block.appendChild(footer);
-          li.appendChild(block);
-          container.appendChild(li);
-        });
-      })
-      .catch(() => {
-        // leave the fallback in place on error
-      });
-  })();
-  </script>
+  <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
 
   </body>
 

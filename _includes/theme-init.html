@@ -1,0 +1,11 @@
+<!-- theme-init: small inline script to apply saved theme early to avoid flash -->
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('site-theme');
+    if(t === 'dark') document.documentElement.classList.add('theme-dark');
+    else if(t === 'light') document.documentElement.classList.remove('theme-dark');
+    // else: no saved preference - let CSS prefers-color-scheme decide
+  } catch(e){}
+})();
+</script>
