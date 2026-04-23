@@ -5,12 +5,15 @@ on:
     branches:
       - static
 
+# Put permissions at workflow level so GITHUB_TOKEN has the same scopes across jobs
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      contents: read
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -24,17 +27,26 @@ jobs:
           source: .
           destination: ./_site
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./_site
 
   deploy:
     runs-on: ubuntu-latest
     needs: build
-    permissions:
-      pages: write
-      id-token: write
     steps:
+      - name: "Debug: show run info and list artifacts"
+        run: |
+          echo "GITHUB_RUN_ID=${GITHUB_RUN_ID}"
+          echo "GITHUB_RUN_NUMBER=${GITHUB_RUN_NUMBER}"
+          echo "GITHUB_REPOSITORY=${GITHUB_REPOSITORY}"
+          # List artifacts for this run via the Actions API (will show whether the artifact exists)
+          curl -s \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts" \
+            || true
+
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
