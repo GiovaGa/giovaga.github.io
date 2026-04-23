@@ -2,6 +2,7 @@
 (function(){
   const storageKey = 'site-theme';
   const root = document.documentElement;
+  const body = document.body;
   const toggle = document.getElementById('theme-toggle');
   if(!toggle) return;
 
@@ -9,11 +10,13 @@
     if(theme === 'dark'){
       root.classList.add('theme-dark');
       root.classList.remove('theme-default');
+      if(body){ body.classList.add('theme-dark'); body.classList.remove('theme-default'); }
       toggle.setAttribute('aria-pressed','true');
       toggle.setAttribute('aria-label','Switch to light mode');
     } else {
       root.classList.remove('theme-dark');
       root.classList.add('theme-default');
+      if(body){ body.classList.remove('theme-dark'); body.classList.add('theme-default'); }
       toggle.setAttribute('aria-pressed','false');
       toggle.setAttribute('aria-label','Switch to dark mode');
     }

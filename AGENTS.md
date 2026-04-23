@@ -14,6 +14,10 @@ Why this structure
 - Keep behavior minimal and predictable: static content is generated at build time (Jekyll) from `_data` files; runtime behaviour is small and isolated in `assets/js` and `_includes`.
 - The inline theme-init script must run before CSS renders to avoid a visual "flash" of the wrong theme for users who saved a preference.
 
+Notes about theme implementation
+- The theme initialization script (`_includes/theme-init.html`) runs early in the `<head>` and applies a `theme-dark` class to the `html` element when a saved preference exists. This avoids a flash of the wrong theme.
+- The runtime toggle is implemented in `_includes/theme-toggle.html` (markup) and `assets/js/theme.js` (behavior). The JS sets classes on both `html` and `body` to remain compatible with the stylesheet.
+
 How to update
 - To add or edit quotes: edit `_data/quotes.yml` (YAML list of objects with `text` and `author`). Jekyll will expose it as `site.data.quotes`.
 - To add or edit publications: edit `_data/publications.yml` (objects with `title`, `url`, `summary`, `year`). Templating in `index.html` iterates over `site.data.publications`.
@@ -24,6 +28,10 @@ How to update
 Build & deploy
 - Local build: install Jekyll and run `jekyll build` or `jekyll serve` in the site root.
 - GitHub Pages: push the repository to a `username.github.io` repo or configure Pages for the project repository. GitHub Pages will build the site automatically (uses a safe set of plugins).
+
+GitHub Actions and Pages notes
+- The repo includes `.github/workflows/pages.yml` which builds the site with Jekyll and deploys the generated `_site` to GitHub Pages. This is necessary when you previously had `.nojekyll` or when you need to run Jekyll in CI.
+- Check Settings → Pages for build and deployment status; if the build fails, the failure log is visible there.
 
 Notes and troubleshooting
 - If you still see the wrong theme on initial load, ensure `_includes/theme-init.html` is included near the top of the `<head>` (it is by default in `index.html`) and that there is no blocking script before it.
