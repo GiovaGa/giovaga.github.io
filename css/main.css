@@ -598,13 +598,19 @@ body.theme-dark .contact-button:hover {
 /* Make the theme toggle look like the other icon links (no border, icon-sized) */
 .theme-toggle {
   display:inline-block;
-  margin-left:5px;
-  padding:4px;
+  /* Pin the toggle to the top-right corner of the viewport */
+  position:fixed;
+  top:1rem;
+  right:1rem;
+  z-index:9999;
+  padding:6px;
   background:transparent;
-  border: none;
+  border:none;
   color:inherit;
   cursor:pointer;
   line-height:0; /* shrink to icon size */
+  /* circular tap target for touch devices */
+  border-radius:6px;
 }
 
 /* keep an accessible focus ring */
@@ -618,7 +624,7 @@ body.theme-dark .theme-toggle { /* no border to color */ }
 body.theme-dark .theme-toggle .icon-sun { display: inline-block; }
 body.theme-dark .theme-toggle .icon-moon { display: none; }
 
-.theme-toggle .icon { height:28px; width:auto; vertical-align:middle; }
+.theme-toggle .icon { height:20px; width:auto; vertical-align:middle; }
 
 /* Hover/fill behavior to match the other icons */
 .theme-toggle:hover .icon path { fill: #333; -webkit-transition:all 0.2s ease; transition:all 0.2s ease; }
