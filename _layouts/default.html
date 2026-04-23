@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include theme-init.html %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{ site.title }}{% if site.tagline %} — {{ site.tagline }}{% endif %}</title>
+
+    <!-- Google font typography settings - defined in _config.yml -->
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700|Open+Sans:400,300,800,700' rel='stylesheet' type='text/css'>
+
+    <meta name="description" content="{{ site.description }}">
+
+    <link rel="stylesheet" href="{{ '/css/main.css' | relative_url }}">
+    <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}">
+    <link rel="icon" type="image/x-icon" href="{{ '/favicon.png' | relative_url }}" />
+  </head>
+
+  <body class="theme-default">
+
+    <div class="wrapper" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="telephone" content=""/>
+      <meta itemprop="address" content=""/>
+
+      {% include header.html %}
+
+      {{ content }}
+
+      {% include footer.html %}
+
+    </div>
+
+    <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
+  </body>
+
+</html>

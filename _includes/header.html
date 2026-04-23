@@ -1,0 +1,31 @@
+<header class="page-header">
+
+  <img src="{{ '/images/avatar.jpg' | relative_url }}" alt="Photo of {{ site.author }}" class="avatar no-print" itemprop="image">
+
+  <h1 class="header-name" itemprop="name">{{ site.title }}</h1>
+
+  <div class="header-contact-info">
+    <p></p>
+  </div>
+
+  <div class="title-bar no-print">
+    <h2 class="header-title" itemprop="jobTitle">{{ site.tagline }}</h2>
+
+    <ul class="icon-links">
+      <li class="icon-link-item"><a href="{{ site.github }}" class="icon-link" itemprop="sameAs">GitHub</a></li>
+      <li class="icon-link-item"><a href="{{ site.website }}" class="icon-link" itemprop="url">Website</a></li>
+    </ul>
+
+    {% include theme-toggle.html %}
+  </div>
+
+  <div class="executive-summary" itemprop="description">
+    <p>{{ site.bio }}</p>
+    <p>{{ site.focus }}</p>
+  </div>
+
+  <hr/>
+  <p>{{ site.seeking }}</p>
+  <a href="mailto:{{ site.email }}" class="contact-button no-print" itemprop="email">Contact me</a>
+
+</header>
