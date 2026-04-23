@@ -1,0 +1,12 @@
+-
+  text: "Premature optimization is the root of all evil."
+  author: "Donald E. Knuth"
+-
+  text: "The best performance improvement is the transition from the nonworking state to the working state."
+  author: "John Ousterhout"
+-
+  text: "Simplicity is prerequisite for reliability."
+  author: "Edsger W. Dijkstra"
+-
+  text: "Make it work, make it right, make it fast."
+  author: "Kent Beck"
