@@ -113,6 +113,18 @@
 
 </ul>
 
+          <!-- Theme toggle button (JS will manage state and persistence) -->
+          <button id="theme-toggle" class="theme-toggle no-print" aria-pressed="false" aria-label="Toggle dark mode">
+            <!-- Moon (shown in light mode) -->
+            <svg class="icon icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+            </svg>
+            <!-- Sun (shown in dark mode) -->
+            <svg class="icon icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+              <path d="M6.76 4.84l-1.8-1.79L3.17 4.84l1.79 1.79 1.8-1.79zM1 13h3v-2H1v2zm10 9h2v-3h-2v3zm7.04-2.46l1.79 1.79 1.79-1.79-1.79-1.79-1.79 1.79zM20 11v2h3v-2h-3zM6.76 19.16l-1.8 1.79L3.17 19.16l1.79-1.79 1.8 1.79zM11 1h2v3h-2V1zm4.24 4.84l1.8-1.79L18.83 4.84l-1.79 1.79-1.8-1.79zM12 6a6 6 0 100 12A6 6 0 0012 6z"/>
+            </svg>
+          </button>
+
 
         </div>
 
@@ -200,6 +212,47 @@
       </footer>
 
     </div>
+
+  <script>
+  (function(){
+    const storageKey = 'site-theme';
+    const root = document.body;
+    const toggle = document.getElementById('theme-toggle');
+    if(!toggle) return; // nothing to do if toggle is missing
+
+    function applyTheme(theme){
+      if(theme === 'dark'){
+        root.classList.add('theme-dark');
+        root.classList.remove('theme-default');
+        // update accessible label and pressed state; do not change inner content (SVG icons)
+        toggle.setAttribute('aria-pressed','true');
+        toggle.setAttribute('aria-label','Switch to light mode');
+      } else {
+        root.classList.remove('theme-dark');
+        root.classList.add('theme-default');
+        toggle.setAttribute('aria-pressed','false');
+        toggle.setAttribute('aria-label','Switch to dark mode');
+      }
+    }
+
+    // determine initial theme: saved -> prefers-color-scheme -> default (light)
+    let saved = null;
+    try { saved = localStorage.getItem(storageKey); } catch (e) { saved = null; }
+    if(saved === 'dark' || (!saved && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)){
+      applyTheme('dark');
+    } else {
+      applyTheme('light');
+    }
+
+    // toggle handler
+    toggle.addEventListener('click', function(){
+      const isDark = root.classList.contains('theme-dark');
+      const next = isDark ? 'light' : 'dark';
+      applyTheme(next);
+      try{ localStorage.setItem(storageKey, next); }catch(e){}
+    });
+  })();
+  </script>
 
   </body>
 

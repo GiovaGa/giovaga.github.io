@@ -532,3 +532,98 @@ body {
     font-size:11px
   }
 }
+
+/* Dark mode support */
+:root {
+  /* light theme colors (defaults) */
+  --bg: #ffffff;
+  --text: #333333;
+  --muted: #9c9c9c;
+  --accent-border: #c7c7c7;
+  --contact-bg: #efefef;
+  --icon-fill: #D1CECC;
+}
+
+body.theme-dark,
+body.theme-dark * {
+  /* ensure inheritance for components that use plain color values */
+}
+
+body.theme-dark {
+  background: #0f1113; /* near-black */
+  color: #e6e6e6;
+}
+
+body.theme-dark a {
+  color: #dfe7ff;
+}
+
+/* stronger link color in dark mode for contrast */
+body.theme-dark a, body.theme-dark .content-section .resume-item-title a,
+body.theme-dark .content-section .resume-item-details a,
+body.theme-dark .content-section .resume-item-copy a,
+body.theme-dark .content-section .resume-item-list a {
+  color: #9ec1ff;
+}
+
+body.theme-dark .section-header {
+  border-top-color: #2b2f33;
+  border-bottom-color: #2b2f33;
+}
+
+body.theme-dark .page-footer {
+  border-top-color: #2b2f33;
+}
+
+body.theme-dark .icon-links .icon-link:hover .icon path {
+  fill: #e6e6e6;
+}
+
+body.theme-dark .icon-links .icon path,
+body.theme-dark .icon-links .icon {
+  fill: #d1d1d1;
+}
+
+body.theme-dark .contact-button {
+  background-color:#222427;
+  color:#e6e6e6;
+}
+
+body.theme-dark .contact-button:hover {
+  background-color:#e6e6e6;
+  color:#111;
+}
+
+/* Toggle button */
+/* Make the theme toggle look like the other icon links (no border, icon-sized) */
+.theme-toggle {
+  display:inline-block;
+  margin-left:5px;
+  padding:4px;
+  background:transparent;
+  border: none;
+  color:inherit;
+  cursor:pointer;
+  line-height:0; /* shrink to icon size */
+}
+
+/* keep an accessible focus ring */
+.theme-toggle:focus { outline: 2px solid #9ec1ff; outline-offset: 2px; }
+
+body.theme-dark .theme-toggle { /* no border to color */ }
+
+/* Icon handling: show moon in light mode, sun in dark mode */
+.theme-toggle .icon { fill: currentColor; }
+.theme-toggle .icon-sun { display: none; }
+body.theme-dark .theme-toggle .icon-sun { display: inline-block; }
+body.theme-dark .theme-toggle .icon-moon { display: none; }
+
+.theme-toggle .icon { height:28px; width:auto; vertical-align:middle; }
+
+/* Hover/fill behavior to match the other icons */
+.theme-toggle:hover .icon path { fill: #333; -webkit-transition:all 0.2s ease; transition:all 0.2s ease; }
+body.theme-dark .theme-toggle:hover .icon path { fill: #e6e6e6; }
+
+@media (prefers-color-scheme: dark) {
+  /* If the OS prefers dark and user has no explicit choice, apply dark visuals to the toggle's default state via JS */
+}
