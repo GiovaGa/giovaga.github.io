@@ -2,22 +2,25 @@ title: "Giovanni Gaio"
 tagline: "Algorithms • Parallel Computing • HPC"
 description: "Master's student in Computer Engineering at the University of Padova. Research interests: algorithms, parallel and high-performance computing. Seeking PhD opportunities."
 author: "Giovanni Gaio"
-email: "phd@ggaio.it"
+email: "contact@ggaio.it"
 url: "https://ggaio.it"
 baseurl: ""
 github: "https://github.com/GiovaGa"
 website: "https://ggaio.it"
 
 # Short bio and focus used in the homepage
-bio: "I'm a master's student in Computer Engineering at the University of Padova. After a semester at ETH Zurich, I am completing my master's thesis at the Huawei Zurich Research Center, where I work on high-performance optimization algorithms."
+bio: "I am a master's student in Computer Engineering at the <b>University of Padova</b>, nearing the end of my studies.
+I am now working on my master's thesis at <b>Computing Systems Laboratory</b> of <b>Huawei Research in Zurich</b>, developing high-performance algorithms under the supervision of Denis Jelovina.
+After my graduation, I will start my PhD under the supervision of prof. Torsten Hoefler at ETH Zurich, as part of <a href=\"https://spcl.ethz.ch/\">Scalable Parallel Computing Laboratory</a>."
 focus: "I focus on algorithms and parallel/high-performance computing, with an emphasis on techniques for fast, efficient computation."
-seeking: "I'm currently seeking PhD opportunities in parallel and high-performance computing, algorithms, or related areas. If you are recruiting, please get in touch."
+contact_intro: "If you have any interesting proposal, thought or question, don't hesitate to contact me at the email below!"
 publications_intro: "Below are selected publications and links to the available documents."
 
 # Build options
 markdown: kramdown
 highlighter: rouge
 permalink: pretty
+
 
 exclude:
   - node_modules
